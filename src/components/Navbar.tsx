@@ -15,9 +15,9 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="navbar bg-base-100 px-5">
-            <div className="navbar-start">
-                <div className="dropdown block lg:hidden ">
+        <nav className="navbar bg-base-100 px-8 py-6">
+            <div className="navbar-start gap-2">
+                <div className="dropdown block lg:hidden">
                     <button
                         type="button"
                         tabIndex={0}
@@ -67,7 +67,7 @@ const Navbar = () => {
                         </NavLink>
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-circle btn-neutral  p-1">
+                <Link to="/" className="btn btn-circle btn-primary p-1">
                     <img src={logo} alt="Background" className="w-16" />
                 </Link>
             </div>

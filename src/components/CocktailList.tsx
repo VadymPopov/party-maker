@@ -11,18 +11,28 @@ export interface Drink {
 interface CocktailListProps {
     drinks: Drink[];
     layout: string;
+    searchTerm: string;
 }
 
-const CocktailList = ({ drinks, layout }: CocktailListProps) => {
+const CocktailList = ({ drinks, layout, searchTerm }: CocktailListProps) => {
+    if (!searchTerm) {
+        return (
+            <h4 className="h-screen text-center">
+                Ready to mix? Enter a cocktail name, like 'Mojito' or 'Gin',
+                above to start searching!
+            </h4>
+        );
+    }
     if (!drinks) {
         return (
             <h4 className="h-screen text-center">
-                No matching cocktails found...
+                No cocktails matched your search. Try a simpler name (e.g.,
+                'Gin' instead of 'Gin Tonic') or a different spirit.
             </h4>
         );
     }
 
-    const formattedDrinks = drinks.map((item) => {
+    const formattedDrinks = drinks?.map((item) => {
         const { idDrink, strDrink, strDrinkThumb, strAlcoholic, strGlass } =
             item;
 
@@ -43,7 +53,7 @@ const CocktailList = ({ drinks, layout }: CocktailListProps) => {
                     : 'mt-12 grid gap-y-8'
             }
         >
-            {formattedDrinks.map((item) => {
+            {formattedDrinks?.map((item) => {
                 return <CocktailCard key={item.id} {...item} layout={layout} />;
             })}
         </div>

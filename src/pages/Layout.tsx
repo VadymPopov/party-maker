@@ -17,9 +17,14 @@ const Layout = () => {
 
     return (
         <>
-            <Navbar />
-            <>{isPageLoading ? <Loader /> : <Outlet />}</>
-            <SearchByLetter />
+            <header>
+                <Navbar />
+            </header>
+            <main>
+                {isPageLoading ? <Loader /> : <Outlet />}
+                <SearchByLetter />
+            </main>
+
             <Footer />
         </>
     );

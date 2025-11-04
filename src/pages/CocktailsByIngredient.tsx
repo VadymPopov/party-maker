@@ -31,7 +31,11 @@ const CocktailsByIngredient = () => {
             </div>
             <div>
                 <Counter drinks={drinks} />
-                <CocktailList drinks={drinks} layout="list" />
+                <CocktailList
+                    drinks={drinks}
+                    layout="list"
+                    searchTerm={searchTerm}
+                />
             </div>
         </section>
     );

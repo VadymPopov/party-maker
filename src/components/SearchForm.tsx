@@ -54,7 +54,7 @@ const SearchForm = ({ searchTerm }: { searchTerm: string }) => {
             <button
                 type="submit"
                 className="btn btn-neutral"
-                disabled={isSubmitting}
+                disabled={isSubmitting || !value}
             >
                 {isSubmitting ? 'searching...' : 'search'}
             </button>

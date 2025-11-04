@@ -5,7 +5,7 @@ const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
 const SearchByLetter = () => {
     return (
-        <section className="mb-10 px-5">
+        <section className="px-10 py-20 text-center lg:px-16 lg:py-24">
             <Title title="browse by name" />
             <div className="flex flex-wrap items-center justify-center">
                 {alphabet.map((letter) => (
